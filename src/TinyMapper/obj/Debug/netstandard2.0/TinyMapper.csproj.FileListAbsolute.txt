@@ -1,0 +1,3 @@
+/home/arley/TinyMapper/src/TinyMapper/obj/Debug/netstandard2.0/TinyMapper.csproj.CoreCompileInputs.cache
+/home/arley/TinyMapper/src/TinyMapper/obj/Debug/netstandard2.0/TinyMapper.AssemblyInfoInputs.cache
+/home/arley/TinyMapper/src/TinyMapper/obj/Debug/netstandard2.0/TinyMapper.AssemblyInfo.cs
