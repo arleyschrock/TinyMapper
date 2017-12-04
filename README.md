@@ -15,7 +15,7 @@ ModelMapper.CreateMap<Foo, Fee>(map =>
 
 ```
 
-Example Object Conversion:
+Example object conversion:
 ```C#
 var foo = new Foo();
 var fee = ModelMapper.Map<Fee>(foo);
@@ -23,7 +23,7 @@ Assert.ArEqual(foo.Id, fee.FeeId);
 
 ```
 
-Example Expression Tree Translation:
+Example expression tree translation:
 ```C#
 // My data model only knows Foo as Fee
 class MyRepo: IRepo

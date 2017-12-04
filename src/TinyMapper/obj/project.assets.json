@@ -184,7 +184,7 @@
     "version": "1.0.0",
     "restore": {
       "projectUniqueName": "/home/arley/TinyMapper/src/TinyMapper/TinyMapper.csproj",
-      "projectName": "TinyMapper",
+      "projectName": "tiny-mapper",
       "projectPath": "/home/arley/TinyMapper/src/TinyMapper/TinyMapper.csproj",
       "packagesPath": "/home/arley/.nuget/packages/",
       "outputPath": "/home/arley/TinyMapper/src/TinyMapper/obj/",

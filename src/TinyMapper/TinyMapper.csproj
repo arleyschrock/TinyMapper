@@ -6,10 +6,12 @@
     <Company>Arley Schrock</Company>
     <Copyright>Copyright © Arley Schrock 2017</Copyright>
     <AssemblyName>TinyMapper</AssemblyName>
-    <PackageId></PackageId>
+    <PackageId>tiny-mapper</PackageId>
     <PackageTags>Object mapper, TinyMapper, Mapping</PackageTags>
     <PackageLicenseUrl>http://www.apache.org/licenses/LICENSE-2.0.html</PackageLicenseUrl>
 	  <RepositoryType>git</RepositoryType>
+    <Description>A tiny object mapper, linq expression translator for dotnet</Description>
+    <ProjectUrl>https://github.com/arleyschrock/tinymapper</ProjectUrl>
     <GeneratePackageOnBuild>True</GeneratePackageOnBuild>
     <Version>1.0.0</Version>
   </PropertyGroup>

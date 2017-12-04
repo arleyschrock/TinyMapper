@@ -69,7 +69,7 @@ namespace TinyMapper
                 }
                 catch (Exception e)
                 {
-                    Trace.WriteLine(e.FormattedMessage());
+                    Trace.WriteLine(e);
                 }
             }
             return result;
