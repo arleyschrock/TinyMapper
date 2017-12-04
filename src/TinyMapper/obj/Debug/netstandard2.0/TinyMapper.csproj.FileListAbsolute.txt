@@ -1,8 +1,0 @@
-/home/arley/TinyMapper/src/TinyMapper/obj/Debug/netstandard2.0/TinyMapper.csproj.CoreCompileInputs.cache
-/home/arley/TinyMapper/src/TinyMapper/obj/Debug/netstandard2.0/TinyMapper.AssemblyInfoInputs.cache
-/home/arley/TinyMapper/src/TinyMapper/obj/Debug/netstandard2.0/TinyMapper.AssemblyInfo.cs
-/home/arley/TinyMapper/src/TinyMapper/bin/Debug/netstandard2.0/TinyMapper.deps.json
-/home/arley/TinyMapper/src/TinyMapper/bin/Debug/netstandard2.0/TinyMapper.dll
-/home/arley/TinyMapper/src/TinyMapper/bin/Debug/netstandard2.0/TinyMapper.pdb
-/home/arley/TinyMapper/src/TinyMapper/obj/Debug/netstandard2.0/TinyMapper.dll
-/home/arley/TinyMapper/src/TinyMapper/obj/Debug/netstandard2.0/TinyMapper.pdb
