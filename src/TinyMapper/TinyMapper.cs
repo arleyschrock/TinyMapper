@@ -21,9 +21,9 @@ namespace TinyMapper
         /// </summary>
         public static TinyMapper ModelMapper => _global.Value;
 
-        private ConcurrentDictionary<string, Converter> _registered = 
+        private ConcurrentDictionary<string, Converter> _registered =
             new ConcurrentDictionary<string, Converter>();
-        
+
         /// <summary>
         /// This constructor is hidden, use the singleton instance
         /// </summary>
@@ -52,7 +52,7 @@ namespace TinyMapper
 
 
         /// <summary>
-        /// Convertes value to T using the mapping definition.
+        /// Converts value to T using the mapping definition.
         /// If no mapping definition is found, returns default(T)
         /// </summary>
         /// <param name="value"></param>
@@ -73,6 +73,20 @@ namespace TinyMapper
                 return (T)converter.Convert(value);
             }
             return default(T);
+        }
+
+        /// <summary>
+        /// /// Converts value to T using the mapping definition.
+        /// If no mapping definition is found, returns default(T). 
+        /// </summary>
+        /// <param name="value"></param>
+        /// <param name="conversionCallback">a callback action to invoke on the converted item</param>
+        /// <returns></returns>
+        public T Map<T>(object value, Action<T> conversionCallback)
+        {
+            var result = Map<T>(value);
+            conversionCallback?.Invoke(result);
+            return result;
         }
 
         /// <summary>

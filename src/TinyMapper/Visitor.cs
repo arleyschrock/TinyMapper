@@ -30,7 +30,7 @@ namespace TinyMapper
         {
             var name = node.Member.Name;
             var mp1 = _mapping.Mapping.FirstOrDefault(x => x.T1Property.ToPropertyInfo()?.Name == name);
-            var other = mp1.T2Property.ToPropertyInfo() ?? typeof(T2).GetProperty(name);
+            var other = mp1?.T2Property.ToPropertyInfo() ?? typeof(T2).GetProperty(name);
 
             if (node.Member.MemberType != MemberTypes.Property || other == null || other.PropertyType != (((PropertyInfo)node.Member).PropertyType))
             {
