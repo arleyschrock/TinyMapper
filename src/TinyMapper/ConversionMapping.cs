@@ -20,6 +20,20 @@ namespace TinyMapper
         /// <returns></returns>
         public ICollection<Map> Mapping { get; } = new List<Map>();
 
+
+        public ICollection<Action<T2, T1>> AfterMappedT2 { get; } = new List<Action<T2, T1>>();
+        public ICollection<Action<T1, T2>> AfterMappedT1 { get; } = new List<Action<T1, T2>>();
+        
+        public ConversionMapping<T1, T2> AfterMapping(Action<T2, T1> action)
+        {
+            AfterMappedT2.Add(action);
+            return this;
+        }
+        public ConversionMapping<T1, T2> AfterMapping(Action<T1, T2> action)
+        {
+            AfterMappedT1.Add(action);
+            return this;
+        }
         /// <summary>
         /// Maps the properties reference by the selector expressions
         /// </summary>
@@ -37,7 +51,7 @@ namespace TinyMapper
         }
 
         /// <summary>
-        /// Maps the properteis referenced by the selector expressions 
+        /// Maps the properties referenced by the selector expressions 
         /// with explicit conversion behaviors
         /// </summary>
         /// <param name="t1Selector">T1 property selector</param>

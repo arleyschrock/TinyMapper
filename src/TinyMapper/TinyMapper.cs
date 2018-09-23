@@ -50,7 +50,7 @@ namespace TinyMapper
             return result;
         }
 
-
+        
         /// <summary>
         /// Converts value to T using the mapping definition.
         /// If no mapping definition is found, returns default(T)
@@ -59,19 +59,20 @@ namespace TinyMapper
         /// <returns></returns>
         public T Map<T>(object value)
         {
-
             if (value == null)
             {
                 return default(T);
             }
+
             // run this thing through our conversion
             var valueType = value.GetType();
             var key = Key(valueType, typeof(T));
             // try to get the converter based on the constructed key
             if (_registered.TryGetValue(key, out var converter))
             {
-                return (T)converter.Convert(value);
+               return (T) converter.Convert(value);
             }
+
             return default(T);
         }
 
@@ -94,13 +95,14 @@ namespace TinyMapper
         /// </summary>
         /// <param name="source">The query expression wherein TFrom is a mapped type</param>
         /// <returns>An expression against the member mapped TTo properties</returns>
-        public Expression<Func<TTo, TResult>> Translate<TFrom, TTo, TResult>(Expression<Func<TFrom, TResult>> source)
+        public Expression<Func<TTo, TResult>> Translate<TFrom, TTo, TResult>(
+            Expression<Func<TFrom, TResult>> source)
         {
             var param = Expression.Parameter(typeof(TTo), source.Parameters.First().Name);
             var visitor = new Visitor<TFrom, TTo>(this, param);
             var body = visitor.Visit(source.Body);
             var lambda = Expression.Lambda(body, param);
-            return (Expression<Func<TTo, TResult>>)lambda;
+            return (Expression<Func<TTo, TResult>>) lambda;
         }
 
         /// <summary>
@@ -111,8 +113,9 @@ namespace TinyMapper
         {
             if (_registered.TryGetValue(Key(typeof(T1), typeof(T2)), out var result))
             {
-                return ((Converter<T1, T2>)result).Mapping;
+                return ((Converter<T1, T2>) result).Mapping;
             }
+
             return null;
         }
 

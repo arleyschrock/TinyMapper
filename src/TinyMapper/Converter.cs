@@ -19,6 +19,35 @@ namespace TinyMapper
             _mapping = mapping;
         }
 
+        private void ApplyAfterMappping(T1 t1, T2 t2, bool t1Source)
+        {
+            if (t1Source)
+            {
+                foreach (var action in _mapping.AfterMappedT2)
+                {
+                    try
+                    {
+                        action?.Invoke(t2, t1);
+                    }
+                    catch
+                    {
+                    }
+                }
+            }
+            else
+            {
+                foreach (var action in _mapping.AfterMappedT1)
+                {
+                    try
+                    {
+                        action?.Invoke(t1, t2);
+                    }
+                    catch
+                    {
+                    }
+                }
+            }
+        }
         /// <summary>
         /// Converts an instance of T2 to an instance of T1
         /// </summary>
@@ -39,6 +68,9 @@ namespace TinyMapper
                     Trace.WriteLine(e);
                 }
             }
+
+            ApplyAfterMappping(result, t2, false);
+            
             return result;
         }
 
@@ -72,6 +104,9 @@ namespace TinyMapper
                     Trace.WriteLine(e);
                 }
             }
+
+            ApplyAfterMappping(t1, result, true);
+            
             return result;
         }
 
